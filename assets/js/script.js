@@ -1,11 +1,20 @@
-var date = moment().format('LLLL');
-$("#currentDay").html(date);
+$("#currentDay").text(moment().format('LLLL'));
 
-// button click listener
+$(document).ready(function () {
+    $(".saveBtn").on("click", function () {
+        var text = $(this).siblings(".description").val();
+        var time = $(this).parent().attr("id");
 
-// save text in localstorage
+        localStorage.setItem(time, text);
+    })
+})
 
-
-// get current time
-
-// change color of text area depending on time
+$("#hour9 .description").val(localStorage.getItem("hour9"));
+$("#hour10 .description").val(localStorage.getItem("hour10"));
+$("#hour11 .description").val(localStorage.getItem("hour11"));
+$("#hour12 .description").val(localStorage.getItem("hour12"));
+$("#hour13 .description").val(localStorage.getItem("hour13"));
+$("#hour14 .description").val(localStorage.getItem("hour14"));
+$("#hour15 .description").val(localStorage.getItem("hour15"));
+$("#hour16 .description").val(localStorage.getItem("hour16"));
+$("#hour17 .description").val(localStorage.getItem("hour17"));
