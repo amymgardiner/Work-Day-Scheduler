@@ -66,6 +66,11 @@ textarea{
 }
 
 .saveBtn i:hover {
-  font-size: 20px;
+  font-size: 30px;
   transition: all .3s ease-in-out;
+  color: #000000;
+}
+
+.fa-floppy-disk {
+  font-size: 20px;
 }
