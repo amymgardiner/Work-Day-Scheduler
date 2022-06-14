@@ -1,4 +1,7 @@
+$(document).ready(function () {
+// Moment.js for date and time in the header
 $("#currentDay").text(moment().format('LLLL'));
+})
 
 function timeColor() {
     //get current hour of the day
@@ -30,6 +33,7 @@ function timeColor() {
         }
     })
 }
+timeColor();
 
 $(".saveBtn").on("click", function () {
     var text = $(this).siblings(".description").val();
@@ -47,5 +51,3 @@ $("#hour14 .description").val(localStorage.getItem("hour14"));
 $("#hour15 .description").val(localStorage.getItem("hour15"));
 $("#hour16 .description").val(localStorage.getItem("hour16"));
 $("#hour17 .description").val(localStorage.getItem("hour17"));
-
-timeTracker();
