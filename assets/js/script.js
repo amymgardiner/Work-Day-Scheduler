@@ -1,7 +1,6 @@
-$(document).ready(function () {
 // Moment.js for date and time in the header
 $("#currentDay").text(moment().format('LLLL'));
-})
+
 
 // first function, will run even if no text on page
 function timeColor() {
@@ -34,7 +33,6 @@ function timeColor() {
         }
     })
 }
-timeColor();
 
 // gets values from time block divs and saves them to local storage when the user clicks the save button, will not save if button isn't clicked
 $(".saveBtn").on("click", function () {
@@ -54,3 +52,12 @@ $("#hour14 .description").val(localStorage.getItem("hour14"));
 $("#hour15 .description").val(localStorage.getItem("hour15"));
 $("#hour16 .description").val(localStorage.getItem("hour16"));
 $("#hour17 .description").val(localStorage.getItem("hour17"));
+
+// loads color for the first time
+timeColor();
+
+// reloads page every half hour so that the time block function is called continuously throughout the day
+window.setTimeout( function() {
+    window.location.reload();
+}, 1800000);
+  
