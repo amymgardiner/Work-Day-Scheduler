@@ -1,7 +1,6 @@
 // Moment.js for date and time in the header
 $("#currentDay").text(moment().format('LLLL'));
 
-
 // first function, will run even if no text on page
 function timeColor() {
     //get current hour of the day
@@ -57,7 +56,7 @@ $("#hour17 .description").val(localStorage.getItem("hour17"));
 timeColor();
 
 // reloads page every half hour so that the time block function is called continuously throughout the day
-window.setTimeout( function() {
+setInterval(function() {
     window.location.reload();
 }, 1800000);
   
