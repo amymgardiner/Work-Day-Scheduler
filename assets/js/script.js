@@ -3,6 +3,7 @@ $(document).ready(function () {
 $("#currentDay").text(moment().format('LLLL'));
 })
 
+// first function, will run even if no text on page
 function timeColor() {
     //get current hour of the day
     var currentTime = moment().hour();
@@ -35,6 +36,7 @@ function timeColor() {
 }
 timeColor();
 
+// gets values from time block divs and saves them to local storage when the user clicks the save button, will not save if button isn't clicked
 $(".saveBtn").on("click", function () {
     var text = $(this).siblings(".description").val();
     var time = $(this).parent().attr("id");
@@ -42,6 +44,7 @@ $(".saveBtn").on("click", function () {
     localStorage.setItem(time, text);
 })
 
+// retrieves items from local storage and sets them into the proper time blocks
 $("#hour9 .description").val(localStorage.getItem("hour9"));
 $("#hour10 .description").val(localStorage.getItem("hour10"));
 $("#hour11 .description").val(localStorage.getItem("hour11"));
